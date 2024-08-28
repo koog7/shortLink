@@ -3,7 +3,18 @@ import ShortUrl from "../models/Url";
 
 const ShortUrlRouter = express.Router();
 ShortUrlRouter.use(express.json());
+ShortUrlRouter.get('/:shortUrl', async (req, res) => {
+    const { shortUrl } = req.params;
+    if(shortUrl){
+        const result = await ShortUrl.findOne({shortUrl: shortUrl})
+        if(result){
+            return res.status(301).send(result.url)
+        }
+    }else {
+        res.status(400).send('Short url not found')
+    }
 
+});
 ShortUrlRouter.post('/links', async (req, res) => {
     const {url} = req.body;
 
