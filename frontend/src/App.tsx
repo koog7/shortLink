@@ -1,12 +1,12 @@
 import './App.css'
+import Home from "./Containers/Home.tsx";
 
-function App() {
-
-  return (
-    <>
-
-    </>
-  )
-}
+const App = () => {
+    return(
+        <>
+          <Home />
+        </>
+    )
+};
 
 export default App

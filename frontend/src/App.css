@@ -3,3 +3,70 @@
   margin: 0 auto;
 }
 
+.custom_input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 100%;
+}
+
+.input {
+  font-size: 18px;
+  padding: 5px 10px;
+  width: 100%;
+  padding-left: 35px;
+  outline: none;
+  background: #FFFFFF;
+  color: #000000;
+  border: 1px solid #C4D1EB;
+  border-radius: 5px;
+  transition: .3s ease;
+}
+
+.input:focus {
+  background: #F2F2F2;
+  border: 1px solid #5A7EC7;
+  border-radius: 10px;
+}
+
+.input::placeholder {
+  color: #DDDDDD;
+}
+
+.svg_icon {
+  position: absolute;
+  left: 10px;
+  fill: #4660DC;
+  width: 18px;
+  height: 18px;
+}
+
+
+.submit {
+  box-shadow:inset 0px -3px 7px 0px #29bbff;
+  background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+  background-color:#2dabf9;
+  border-radius:3px;
+  border:1px solid #0b0e07;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:4px 15px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #263666;
+  margin-left: 5px;
+}
+.submit:hover {
+  background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+  background-color:#0688fa;
+}
+.submit:active {
+  position:relative;
+  top:1px;
+}
+
+.title{
+  margin-left: 35px;
+}
