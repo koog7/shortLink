@@ -3,15 +3,16 @@ import ShortUrl from "../models/Url";
 
 const ShortUrlRouter = express.Router();
 ShortUrlRouter.use(express.json());
+
 ShortUrlRouter.get('/:shortUrl', async (req, res) => {
     const { shortUrl } = req.params;
     if(shortUrl){
         const result = await ShortUrl.findOne({shortUrl: shortUrl})
         if(result){
-            return res.status(301).send(result.url)
+            return res.status(301).redirect(result.url)
         }
     }else {
-        res.status(400).send('Short url not found')
+        res.status(404).send('Short url not found')
     }
 
 });
@@ -22,7 +23,7 @@ ShortUrlRouter.post('/links', async (req, res) => {
         return res.status(400).send('Provide link')
     }
 
-    const charactersAndDigits = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const charactersAndDigits = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
     try{
         const split = charactersAndDigits.split('')
