@@ -1,10 +1,10 @@
 import express from 'express';
 import ShortUrl from "../models/Url";
 
-const ShortUrlRouter = express.Router();
-ShortUrlRouter.use(express.json());
+const ShortUrlsRouter = express.Router();
+ShortUrlsRouter.use(express.json());
 
-ShortUrlRouter.get('/:shortUrl', async (req, res) => {
+ShortUrlsRouter.get('/:shortUrl', async (req, res) => {
     const { shortUrl } = req.params;
     if(shortUrl){
         const result = await ShortUrl.findOne({shortUrl: shortUrl})
@@ -16,7 +16,7 @@ ShortUrlRouter.get('/:shortUrl', async (req, res) => {
     }
 
 });
-ShortUrlRouter.post('/links', async (req, res) => {
+ShortUrlsRouter.post('/links', async (req, res) => {
     const {url} = req.body;
 
     if(!url){
@@ -44,4 +44,4 @@ ShortUrlRouter.post('/links', async (req, res) => {
     }
 });
 
-export default ShortUrlRouter;
+export default ShortUrlsRouter;

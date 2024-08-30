@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import ShortUrlRouter from "./routers/ShortUrlRouter";
+import ShortUrlsRouter from "./routers/ShortUrlRouter";
 import * as mongoose from "mongoose";
 
 
@@ -9,7 +9,7 @@ const port = 8000;
 
 app.use(cors())
 app.use(express.json())
-app.use('/', ShortUrlRouter)
+app.use('/', ShortUrlsRouter)
 
 const run = async () => {
     

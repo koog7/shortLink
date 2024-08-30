@@ -35,7 +35,7 @@ const Home = () => {
             {shortUrl ? (
                 <div>
                     <p>Your short link :</p>
-                    <a href={`http://localhost:8000/${shortUrl}`}>http://localhost:8000/{shortUrl}</a>
+                    <a target={'_blank'} href={`http://localhost:8000/${shortUrl}`}>http://localhost:8000/{shortUrl}</a>
                 </div>
 
             ) : (<></>)}

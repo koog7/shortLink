@@ -11,5 +11,5 @@ const UrlSchema = new Schema({
     },
 });
 
-const ShortUrl = mongoose.model('Product', UrlSchema);
+const ShortUrl = mongoose.model('ShortLink', UrlSchema);
 export default ShortUrl;
